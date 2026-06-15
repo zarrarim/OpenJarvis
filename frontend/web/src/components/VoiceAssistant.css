@@ -1,0 +1,160 @@
+.voice-assistant {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-height: 90vh;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.voice-assistant-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  flex: 1;
+}
+
+.logo-section h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.status-indicators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+  background: #4ade80;
+}
+
+.status-dot.disconnected {
+  background: #f87171;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.voice-assistant-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  gap: 20px;
+}
+
+.voice-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.listening-indicator,
+.processing-indicator,
+.speaking-indicator {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeInOut 1s infinite;
+}
+
+.listening-indicator {
+  background: #dbeafe;
+  color: #0284c7;
+}
+
+.processing-indicator {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.speaking-indicator {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.voice-assistant-footer {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .voice-assistant {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 10px;
+  }
+
+  .voice-assistant-header {
+    padding: 20px 15px;
+  }
+
+  .logo-section h1 {
+    font-size: 24px;
+  }
+
+  .voice-assistant-content {
+    padding: 15px;
+  }
+}
